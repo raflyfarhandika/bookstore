@@ -4,9 +4,14 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
+	"github.com/raflyfarhandika/bookstore/database"
 )
 
 func main() {
+
+	database.InitDB()
+	database.MigrateDB()
+
 	r := gin.Default()
 
 	r.GET("/", func(c *gin.Context) {
