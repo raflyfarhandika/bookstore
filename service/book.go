@@ -105,7 +105,7 @@ func (s *BookService) DeleteBook(id uint) app.Response {
 	}
 }
 
-func (s *BookService) UpdateBook(id uint, newBook []models.Book) app.Response {
+func (s *BookService) UpdateBook(id uint, newBook models.Book) app.Response {
 	oldBook, err := s.Repository.FindOne(id)
 
 	if err != nil {

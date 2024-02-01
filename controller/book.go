@@ -115,7 +115,7 @@ func (c *BookController) UpdateBook(ctx *gin.Context) {
 		return
 	}
 
-	var request []models.Book
+	var request models.Book
 
 	err = ctx.ShouldBindJSON(&request)
 
