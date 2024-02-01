@@ -21,10 +21,10 @@ func StartApp() *gin.Engine {
 	bookRoute := api.Group("/book")
 	{
 		bookRoute.GET("/", bookController.GetAllBook)
-		bookRoute.GET("/:id", bookController.GetBookById)
+		bookRoute.GET("/:bookId", bookController.GetBookById)
 		bookRoute.POST("/", bookController.InputNewBook)
-		bookRoute.PUT("/:id", bookController.UpdateBook)
-		bookRoute.DELETE("/:id", bookController.DeleteBook)
+		bookRoute.PUT("/:bookId", bookController.UpdateBook)
+		bookRoute.DELETE("/:bookId", bookController.DeleteBook)
 	}
 
 	return r

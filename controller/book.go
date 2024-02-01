@@ -57,7 +57,7 @@ func (c *BookController) GetBookById(ctx *gin.Context) {
 }
 
 func (c *BookController) InputNewBook(ctx *gin.Context) {
-	var request []models.Book
+	var request models.Book
 
 	err := ctx.ShouldBindJSON(&request)
 

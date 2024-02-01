@@ -59,8 +59,8 @@ func (s *BookService) GetBookById(id uint) app.Response {
 	}
 }
 
-func (s *BookService) CreateBook(book []models.Book) app.Response {
-	result, err := s.Repository.Create()
+func (s *BookService) CreateBook(book models.Book) app.Response {
+	result, err := s.Repository.Create(book)
 
 	if err != nil {
 		return app.Response{

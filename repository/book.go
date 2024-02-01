@@ -37,16 +37,15 @@ func (r *BookRepo) FindOne(id uint) ([]models.Book, error) {
 	return result, nil
 }
 
-func (r *BookRepo) Create() ([]models.Book, error) {
-	var book []models.Book
+func (r *BookRepo) Create(request models.Book) (models.Book, error) {
 
-	err := r.db.Create(&book).Error
+	err := r.db.Create(&request).Error
 
 	if err != nil {
-		return []models.Book{}, err
+		return models.Book{}, err
 	}
 
-	return book, nil
+	return request, nil
 }
 
 func (r *BookRepo) Delete(book []models.Book) error {
