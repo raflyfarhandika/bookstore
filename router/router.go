@@ -12,9 +12,9 @@ func StartApp() *gin.Engine {
 	r := gin.Default()
 
 	db := database.GetDB()
-	repo := repository.NewBookRepo(db)
-	service := service.NewBookService(repo)
-	bookController := controller.NewBookController(service)
+	bookRepo := repository.NewBookRepo(db)
+	bookService := service.NewBookService(bookRepo)
+	bookController := controller.NewBookController(bookService)
 
 	api := r.Group("/api/v1")
 
